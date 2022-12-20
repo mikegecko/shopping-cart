@@ -2,10 +2,12 @@ import { Link } from "react-router-dom"
 
 export default function Navbar() {
     return(
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/contact">Contact</Link>
-        </nav>
+        <div className="navbar">
+            <nav>
+                <Link className="link" to="/">Home</Link>
+                <Link className="link" to="/products">Products</Link>
+                <Link className="link" to="/contact">Contact</Link>
+            </nav>
+        </div>
     )
 }
