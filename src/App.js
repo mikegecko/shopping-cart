@@ -19,6 +19,14 @@ import Navbar from "./components/Navbar";
     - Cart / Checkout page ( Cart should be a modal )
     - Contact page
 
+  States:
+    - Item object w/
+      - Price
+      - Quantity
+      - ID / Name
+    - Cart
+      - Total price
+      - Total items
 */
 
 function App() {
