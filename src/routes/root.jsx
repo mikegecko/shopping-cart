@@ -1,6 +1,5 @@
 import { Routes, Route, Link } from 'react-router-dom';
-import bg from '../images/room1.jpeg'
-import chair from '../images/modern-chair.jpeg';
+
 export default function Root() {
   return (
     <div className='home-container'>
