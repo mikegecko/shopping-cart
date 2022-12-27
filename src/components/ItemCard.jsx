@@ -1,7 +1,7 @@
 
 export default function ItemCard(props){
     const stock = () => {
-        if(props.product.qty > 0){
+        if(props.product.stock > 0){
             return(
                 <p className="in-stock">In Stock</p>
             )
@@ -21,7 +21,7 @@ export default function ItemCard(props){
                 <p>${props.product.price}</p>
                 <div className="prod-info">
                     {stock()}
-                    <button className="cart-btn">Add to cart</button>
+                    <button className="cart-btn" onClick={(e) => {props.addToCart(props.product.id)}}>Add to cart</button>
                 </div>
                 
         </div>

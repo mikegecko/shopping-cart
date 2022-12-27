@@ -199,7 +199,7 @@ padding: .1rem;
   outline: 1px solid gray;
   padding: .5rem 1rem .5rem 1rem;
   width: max-content;
-  transition: 300ms;
+  transition: 150ms;
 }
 .cart-btn:hover{
   background-color: #42f54b;

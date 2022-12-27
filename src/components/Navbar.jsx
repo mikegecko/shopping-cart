@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function Navbar() {
+export default function Navbar(props) {
     return(
         <div className="navbar">
             <nav>
@@ -14,7 +14,7 @@ export default function Navbar() {
                 <button className="search Ibtn">
                     <SearchIcon />
                 </button>
-                <button className="cart Ibtn">
+                <button className="cart Ibtn" onClick={props.cartHandler}>
                     <ShoppingCartOutlinedIcon />
                 </button>
             </div>

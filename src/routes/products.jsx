@@ -11,7 +11,7 @@ export default function Product(props) {
             <div className="product-container">
                 {props.products.map((product, index) => {
                     return(
-                        <ItemCard key={index} product={product} />
+                        <ItemCard key={index} product={product} addToCart={props.addToCart}/>
                     )
                 })}
             </div>

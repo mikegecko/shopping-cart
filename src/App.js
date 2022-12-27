@@ -38,39 +38,28 @@ export const product_images = importAll(
   require.context("./images/products", false, /\.(png|jpe?g|svg)$/)
 );
 
-//Stucture ideas
-/*
-  [
-    {N:'xxx',P:000,qty:00,id:x,},
-    {N:'xxx',P:000,qty:00,id:x,}
-  ]
-  OR
-  {
-    x:{N:'xxx',P:000,qty:00,}
-    y:{N:'xxx',P:000,qty:00,}
-  }
-  Accessing
-  arr.foreach(el,index) => {
-    el.
-  }
-*/
+//Example product info
 export const product_info = [
-  {name:"Nordic Metal Wall Art", price: 799.99, qty: 5,},
-  {name:"Nordic Glass Coffee Table",price:249.99,qty:15},
-  {name:"Mid Century Espresso Brown 6 Drawer Dresser",price:349.99,qty:8},
-  {name:"Modern Black Metal Bookshelf",price:149.99,qty:0},
-  {name:"Mid Century Media Console",price: 499.99,qty:15},
-  {name:"Modern Dining Chair",price:99.99,qty:0},
-  {name:"Modern Couch",price:999.99,qty:3},
-  {name:"Modern Office Desk",price:1499.99,qty:20},
-  {name:"Modern Glass Walnut Cornertable",price:129.99,qty:14},
-  {name:"Modern Sofa Chair",price:399.99,qty:13},
-  {name:"Modern Bookshelf",price:2999.99,qty:5},
-  {name:"White Modern Dresser",price:1799.99,qty:7},
+  {name:"Nordic Metal Wall Art", price: 799.99, stock: 5, qty: 0},
+  {name:"Nordic Glass Coffee Table",price:249.99,stock:15, qty: 0},
+  {name:"Mid Century Espresso Brown 6 Drawer Dresser",price:349.99,stock:8, qty: 0},
+  {name:"Modern Black Metal Bookshelf",price:149.99,stock:0, qty: 0},
+  {name:"Mid Century Media Console",price: 499.99,stock:15, qty: 0},
+  {name:"Modern Dining Chair",price:99.99,stock:0, qty: 0},
+  {name:"Modern Couch",price:999.99,stock:3, qty: 0},
+  {name:"Modern Office Desk",price:1499.99,stock:20, qty: 0},
+  {name:"Modern Glass Walnut Cornertable",price:129.99,stock:14, qty: 0},
+  {name:"Modern Sofa Chair",price:399.99,stock:13, qty: 0},
+  {name:"Modern Bookshelf",price:2999.99,stock:5, qty: 0},
+  {name:"White Modern Dresser",price:1799.99,stock:7, qty: 0},
 ]
 function App() {
+  //States
   const [products, setProducts] = useState([]);
-  
+  const [cart, setCart] = useState([]);
+
+  //Methods
+
   const createProducts = () => {
     let prodArray = [];
     let index = 0;
@@ -86,6 +75,7 @@ function App() {
           img:image,
           price: product_info[index].price,
           qty: product_info[index].qty,
+          stock: product_info[index].stock,
         };
         prodArray.push(product);
       }
@@ -96,16 +86,49 @@ function App() {
   useEffect(() => {
     setProducts(createProducts());
   }, []);
+  //Cart Methods
+  // add remove/change qty event
+  // 
+  const cartHandler = (e) => {
+    console.log('Cart Event');
+  }
+  const addToCart = (itemID) => {
+    let newItem = {...products[itemID]};
+    newItem.qty += 1;
+    if(containsItemID(cart,newItem)){
+      //edit item
+      for (let index = 0; index < cart.length; index++) {
+        let item = {...cart[index]};
+        item.qty += 1;
+        let items = [...cart];
+        items[index] = item;
+        setCart(items);
+      }
+    }
+    else{
+      setCart([...cart,newItem]);
+    }
+  }
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
-
+  const containsItemID = (arr, obj) => {
+    for (let index = 0; index < arr.length; index++) {
+      const item = arr[index];
+      if(item.id === obj.id){
+        return(true);
+      }
+    }
+    return(false);
+  }
   return (
     <div className="App">
       <BrowserRouter>
-      <Navbar />
+      <Navbar cartHandler={cartHandler}/>
         <Routes>
-          {console.log(products)}
           <Route path="/" element={<Root />} />
-          <Route path="/products" element={<Product products={products} />} />
+          <Route path="/products" element={<Product products={products} addToCart={addToCart}/>} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
