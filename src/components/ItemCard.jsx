@@ -1,5 +1,4 @@
 
-
 export default function ItemCard(props){
     const stock = () => {
         if(props.product.qty > 0){
@@ -17,10 +16,14 @@ export default function ItemCard(props){
         <div className="card">
             {/* Name | Picture | Price | Stock | ID */}
             {/* Add to cart, quantity adding to card */}
-            <h4>{props.product.name}</h4>
-            <img src={props.product.img} alt="product" />
-            <p>${props.product.price}</p>
-            <p>{stock()}</p>
+                <img src={props.product.img} alt="product" />
+                <h4>{props.product.name}</h4>
+                <p>${props.product.price}</p>
+                <div className="prod-info">
+                    {stock()}
+                    <button className="cart-btn">Add to cart</button>
+                </div>
+                
         </div>
     )
 }
