@@ -17,7 +17,7 @@ export default function Navbar(props) {
                 <button className="cart Ibtn" onClick={props.cartHandler}>
                     <ShoppingCartOutlinedIcon />
                 </button>
-                <Cart cart={props.cart} open={props.open} onClose={props.onClose}/>
+                <Cart qtyHandler={props.qtyHandler} cart={props.cart} open={props.open} onClose={props.onClose}/>
             </div>
             
         </div>
