@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
-
+import Cart from "./Cart";
 export default function Navbar(props) {
     return(
         <div className="navbar">
@@ -17,7 +17,9 @@ export default function Navbar(props) {
                 <button className="cart Ibtn" onClick={props.cartHandler}>
                     <ShoppingCartOutlinedIcon />
                 </button>
+                <Cart cart={props.cart} open={props.open} onClose={props.onClose}/>
             </div>
+            
         </div>
     )
 }
