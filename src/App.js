@@ -6,17 +6,17 @@ import {
   Routes,
 } from "react-router-dom";
 import Root from "./routes/root";
-import ErrorPage from "./error-page";
 import Contact from "./routes/contact";
 import Product from "./routes/products";
 import Navbar from "./components/Navbar";
 /*---------- App Planning -----------
 
   Pages:
-    - Homepage
-    - Store page
-    - Cart / Checkout page ( Cart should be a modal )
-    - Contact page
+    - Homepage DONE
+    - Store page DONE
+    - Cart DONE
+    - Checkout page
+    - Contact page DONE
 
   States:
     - Item object w/
@@ -26,6 +26,12 @@ import Navbar from "./components/Navbar";
     - Cart
       - Total price
       - Total items
+
+  ---------- TODO ----------
+    - Disable buttons for out of stock items
+    - Fix mobile site display
+    - Add functionality to qty input in cart
+    - Finish home page styling
 */
 function importAll(r) {
   let images = {};
@@ -110,9 +116,9 @@ function App() {
       setCart([...cart,newItem]);
     }
   }
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+  // useEffect(() => {
+  //   console.log(cart);
+  // }, [cart]);
 
   const containsItemID = (arr, obj) => {
     for (let index = 0; index < arr.length; index++) {
@@ -139,6 +145,20 @@ function App() {
     }
     else{
       //event is a input change event
+      let id = e.target.id
+      let newQty = e.target.value;
+      let newCart = [...cart];
+      let newItem = {...cart[id]};
+    
+      if(e.target.value <= 0){
+        newCart[id] = null;
+        setCart(filterNullItems(newCart));
+      }
+      else{
+        newItem.qty = newQty;
+        newCart[id] = newItem;
+        setCart(newCart);
+      }
     }
   }
   const increaseQty = (cartID) => {

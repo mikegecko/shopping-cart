@@ -51,7 +51,7 @@ export default function Cart(props) {
                   <div className="cart-ctrl">
                     <div className="qty-ctrl">
                       <button id={'d'+index} onClick={props.qtyHandler}>-</button>
-                      <input value={item.qty} onChange={props.qtyHandler}></input>
+                      <input id={index} value={item.qty} onChange={props.qtyHandler} type={'number'}></input>
                       <button id={'i'+index} onClick={props.qtyHandler}>+</button>
                     </div>
                     <div className="cart-price">${item.price}</div>
