@@ -188,14 +188,12 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter name='router'>
       <Navbar qtyHandler={qtyHandler} cart={cart} cartHandler={cartHandler} open={cartDrawer} onClose={() => toggleCart(false)} />
         <Routes>
           <Route path="/" element={<Root />} />
           <Route path="/products" element={<Product products={products} addToCart={addToCart}/>} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </BrowserRouter>
     </div>
   );
 }
