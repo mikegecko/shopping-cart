@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.b8b6a4b2.css",
-    "main.js": "/shopping-cart/static/js/main.6bf08a99.js",
+    "main.js": "/shopping-cart/static/js/main.5976c94e.js",
     "static/media/modern-desk.png": "/shopping-cart/static/media/modern-desk.6473d6c7cb1bfb79ddd7.png",
     "static/media/midcentury-mediaconsole.jpeg": "/shopping-cart/static/media/midcentury-mediaconsole.7bd96295eb8c2237c79e.jpeg",
     "static/media/room1.jpeg": "/shopping-cart/static/media/room1.fa1d6c096a22cebcebac.jpeg",
@@ -16,10 +16,10 @@
     "static/media/white-dresser.jpg": "/shopping-cart/static/media/white-dresser.43f951170cf9e0a73149.jpg",
     "index.html": "/shopping-cart/index.html",
     "main.b8b6a4b2.css.map": "/shopping-cart/static/css/main.b8b6a4b2.css.map",
-    "main.6bf08a99.js.map": "/shopping-cart/static/js/main.6bf08a99.js.map"
+    "main.5976c94e.js.map": "/shopping-cart/static/js/main.5976c94e.js.map"
   },
   "entrypoints": [
     "static/css/main.b8b6a4b2.css",
-    "static/js/main.6bf08a99.js"
+    "static/js/main.5976c94e.js"
   ]
 }
