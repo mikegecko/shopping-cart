@@ -188,7 +188,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter name='root'>
       <Navbar qtyHandler={qtyHandler} cart={cart} cartHandler={cartHandler} open={cartDrawer} onClose={() => toggleCart(false)} />
         <Routes>
           <Route path="/" element={<Root />} />
