@@ -57,9 +57,9 @@ function App() {
   //States
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-
+  const [cartDrawer, setCartDrawer] = useState(false);
   //Methods
-
+  
   const createProducts = () => {
     let prodArray = [];
     let index = 0;
@@ -90,7 +90,11 @@ function App() {
   // add remove/change qty event
   // 
   const cartHandler = (e) => {
-    console.log('Cart Event');
+    console.log('why');
+    toggleCart(!cartDrawer);
+  }
+  const toggleCart = (bool) => {
+    setCartDrawer(bool);
   }
   const addToCart = (itemID) => {
     let newItem = {...products[itemID]};
@@ -122,10 +126,13 @@ function App() {
     }
     return(false);
   }
+
+
+
   return (
     <div className="App">
       <BrowserRouter>
-      <Navbar cartHandler={cartHandler}/>
+      <Navbar cart={cart} cartHandler={cartHandler} open={cartDrawer} onClose={() => toggleCart(false)} />
         <Routes>
           <Route path="/" element={<Root />} />
           <Route path="/products" element={<Product products={products} addToCart={addToCart}/>} />
