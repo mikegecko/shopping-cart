@@ -30,7 +30,7 @@ import Navbar from "./components/Navbar";
   ---------- TODO ----------
     - Disable buttons for out of stock items
     - Fix mobile site display
-    - Add functionality to qty input in cart
+    - Add functionality to qty input in cart DONE
     - Finish home page styling
 */
 function importAll(r) {

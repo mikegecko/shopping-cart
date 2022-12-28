@@ -3,6 +3,7 @@
   text-align: center;
   width: 100vw;
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   /* Address homepage styling */
@@ -104,20 +105,26 @@
   width: 15%;
   height: 15%;
 }
-.out{
-  
-}
-.mid{
- 
-}
-.center{
-  
+.crt{
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: rgb(255, 42, 42);
+  color: inherit;
+  top: 2.65rem;
+  right: 3.65rem;
+  border-radius: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .contact-page{
   background-color: black;
   width: 100%;
   height: calc(100vh - 4.5rem);
   color: white;
+  color: black;
 }
 .contactbar{
   display: flex;
@@ -286,10 +293,10 @@ input[type=number] {
   width: 12rem;
   height: 2rem;
   font-size: 1rem;
-  background-color: #42f54b;
+  background-color: #00f20c;
   transition: 200ms;
   border-radius: 3px;
-  border: 1px solid gray;
+  border: 1px solid black;
   cursor: pointer;
   text-align: center;
   justify-self: center;
