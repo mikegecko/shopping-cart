@@ -19,6 +19,7 @@
   background-color: rgb(246, 188, 65);
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 }
 .navbar nav{
   display: flex;
@@ -77,12 +78,20 @@
 }
 .home-container{
   background-color: black;
-  background-image: url('./images/room1.jpeg');
+  /* background-image: url('./images/room1.jpeg'); */
   height: 100%;
   background-repeat:no-repeat;
   background-size:cover;
   background-position:center;
-  
+  z-index: -2;
+}
+.home>img{
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: -1;
 }
 .overlay{
   position: relative;
@@ -142,7 +151,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: auto;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -158,6 +167,8 @@
   background-color: whitesmoke;
   justify-content: center;
   gap: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 .card{
   height: 300px;
