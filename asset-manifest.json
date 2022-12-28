@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.b8b6a4b2.css",
+    "main.js": "/shopping-cart/static/js/main.6bf08a99.js",
+    "static/media/modern-desk.png": "/shopping-cart/static/media/modern-desk.6473d6c7cb1bfb79ddd7.png",
+    "static/media/midcentury-mediaconsole.jpeg": "/shopping-cart/static/media/midcentury-mediaconsole.7bd96295eb8c2237c79e.jpeg",
+    "static/media/room1.jpeg": "/shopping-cart/static/media/room1.fa1d6c096a22cebcebac.jpeg",
+    "static/media/China-Home-Decor-Wholesale-Modern-Nordic-Luxury-Minimalist-Kids-Room-Metal-Flower-Wall-Hanging-Art-Other-Home-Decor-Items.jpeg": "/shopping-cart/static/media/China-Home-Decor-Wholesale-Modern-Nordic-Luxury-Minimalist-Kids-Room-Metal-Flower-Wall-Hanging-Art-Other-Home-Decor-Items.8b037aa561c4887c7530.jpeg",
+    "static/media/Nordic-Glass-Coffee-Tables-Modern-Leisure-Living-Room-Furniture-Creative-Corner-Table-Simple-Metal-Living-Room.jpg_Q90.jpg": "/shopping-cart/static/media/Nordic-Glass-Coffee-Tables-Modern-Leisure-Living-Room-Furniture-Creative-Corner-Table-Simple-Metal-Living-Room.jpg_Q90.f8dfb87faf3f903707e9.jpg",
+    "static/media/modern-glass-walnut-cornertable.jpeg": "/shopping-cart/static/media/modern-glass-walnut-cornertable.b6c7f28c3b4a6e2b61d3.jpeg",
+    "static/media/auburn-mid-century-modern-espresso-brown-finished-wood-6-drawer-dresser-asy-furniture-houston-tx-29975246929967.jpeg": "/shopping-cart/static/media/auburn-mid-century-modern-espresso-brown-finished-wood-6-drawer-dresser-asy-furniture-houston-tx-29975246929967.682ab7dbb1b82ecc1c8f.jpeg",
+    "static/media/modern-sofachair.jpeg": "/shopping-cart/static/media/modern-sofachair.085d9a5bf5014bdf6aed.jpeg",
+    "static/media/modern-couch.jpg": "/shopping-cart/static/media/modern-couch.c4cf80de16bd1c7c3761.jpg",
+    "static/media/metal-bookshlef.jpg": "/shopping-cart/static/media/metal-bookshlef.7ba8bb11223f88384ee4.jpg",
+    "static/media/modernbookshelf.jpeg": "/shopping-cart/static/media/modernbookshelf.c01c79bfb92802ad3a19.jpeg",
+    "static/media/white-dresser.jpg": "/shopping-cart/static/media/white-dresser.43f951170cf9e0a73149.jpg",
+    "index.html": "/shopping-cart/index.html",
+    "main.b8b6a4b2.css.map": "/shopping-cart/static/css/main.b8b6a4b2.css.map",
+    "main.6bf08a99.js.map": "/shopping-cart/static/js/main.6bf08a99.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8b6a4b2.css",
+    "static/js/main.6bf08a99.js"
+  ]
+}
