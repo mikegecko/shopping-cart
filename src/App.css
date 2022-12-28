@@ -208,3 +208,17 @@ padding: .1rem;
   background-color: #2db034;
   transition: 0s;
 }
+.cart-img{
+  width: 60px;
+  border-radius: 8px;
+}
+.cart-item{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+  font-weight: bold;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: .5rem;
+}
