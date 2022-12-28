@@ -87,10 +87,7 @@ function App() {
     setProducts(createProducts());
   }, []);
   //Cart Methods
-  // add remove/change qty event
-  // 
   const cartHandler = (e) => {
-    console.log('why');
     toggleCart(!cartDrawer);
   }
   const toggleCart = (bool) => {
@@ -126,13 +123,53 @@ function App() {
     }
     return(false);
   }
-
-
+  const qtyHandler = (e) => {
+    if(e.target.localName === 'button'){
+      //event is a button click
+      let id = e.target.id;
+      if(id.charAt(0) === 'i'){
+        increaseQty(id.slice(1));
+      }
+      else if(id.charAt(0) === 'd'){
+        decreaseQty(id.slice(1));
+      }
+      else{
+        console.log('Quantity Event Error');
+      }
+    }
+    else{
+      //event is a input change event
+    }
+  }
+  const increaseQty = (cartID) => {
+    let newCart = [...cart];
+    let newItem = {...cart[cartID]};
+    newItem.qty++;
+    newCart[cartID] = newItem;
+    setCart(newCart);
+  }
+  const decreaseQty = (cartID) => {
+    let newCart = [...cart];
+    let newItem = {...cart[cartID]};
+    newItem.qty--;
+    if(newItem.qty <= 0){
+      //remove item from cart
+      newCart[cartID] = null;
+      setCart(filterNullItems(newCart));
+    }
+    else{
+      newCart[cartID] = newItem;
+      setCart(newCart);
+    }
+  }
+  const filterNullItems = (arr) => {
+   return(arr.filter((x) => x !== null));
+  }
 
   return (
     <div className="App">
       <BrowserRouter>
-      <Navbar cart={cart} cartHandler={cartHandler} open={cartDrawer} onClose={() => toggleCart(false)} />
+      <Navbar qtyHandler={qtyHandler} cart={cart} cartHandler={cartHandler} open={cartDrawer} onClose={() => toggleCart(false)} />
         <Routes>
           <Route path="/" element={<Root />} />
           <Route path="/products" element={<Product products={products} addToCart={addToCart}/>} />
